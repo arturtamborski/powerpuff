@@ -17,11 +17,13 @@ prepare: # set up virtual env
 
 
 build: # build package
-	python3 setup.py bdist_wheel
+	source .venv/bin/activate && \
+		python3 setup.py bdist_wheel
 
 
 install: # install package locally
-	source .venv/bin/activate && python3 -m pip install dist/*.whl
+	source .venv/bin/activate && \
+		python3 -m pip install dist/*.whl
 
 
 bump-minor: # increase minor version
@@ -33,4 +35,5 @@ bump-major: # increase major version
 
 
 upload: build # upload package to pypi
-	python3 -m twine upload dist/*
+	source .venv/bin/activate && \
+		python3 -m twine upload dist/*

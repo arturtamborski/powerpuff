@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
             name = 'powerpuff',
-         version = '0.0.1',
+         version = '0.0.2',
          license = 'MIT',
           author = 'Artur Tamborski',
     author_email = 'ar@tur.ski',
@@ -24,4 +24,5 @@ setuptools.setup(
     zip_safe = False,
     include_package_data = True,
     packages = setuptools.find_packages(),
+    install_requires = ['rich', 'pipe'],
 )
